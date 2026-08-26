@@ -90,7 +90,7 @@ class PublicController extends Controller
             })
             ->values();
 
-        $kesehatan = \App\Models\StatistikPenduduk::where('kategori', 'kesehatan')
+        $kesehatan = \App\Models\StatistikPenduduk::where('kategori', 'jumlah_penduduk')
             ->where('tahun', $tahun)
             ->get()
             ->groupBy('label')

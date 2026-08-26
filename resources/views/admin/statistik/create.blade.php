@@ -25,7 +25,7 @@
                 <option value="usia">Usia</option>
                 <option value="pekerjaan">Pekerjaan</option>
                 <option value="pendidikan">Pendidikan</option>
-                <option value="kesehatan">Kesehatan</option>
+                <option value="kesehatan">Jumlah Penduduk</option>
             </select>
         </div>
 

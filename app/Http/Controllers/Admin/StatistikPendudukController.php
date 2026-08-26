@@ -25,7 +25,7 @@ class StatistikPendudukController extends Controller
     {
         $validated = $request->validate([
             'dusun_id' => 'required|exists:dusuns,id',
-            'kategori' => 'required|in:usia,pekerjaan,pendidikan,kesehatan',
+            'kategori' => 'required|in:usia,pekerjaan,pendidikan,jumlah_penduduk',
             'label' => 'required|string|max:255',
             'jumlah_laki' => 'nullable|integer|min:0',
             'jumlah_perempuan' => 'nullable|integer|min:0',
@@ -47,7 +47,7 @@ class StatistikPendudukController extends Controller
     {
         $validated = $request->validate([
             'dusun_id' => 'required|exists:dusuns,id',
-            'kategori' => 'required|in:usia,pekerjaan,pendidikan,kesehatan',
+            'kategori' => 'required|in:usia,pekerjaan,pendidikan,jumlah_penduduk',
             'label' => 'required|string|max:255',
             'jumlah_laki' => 'nullable|integer|min:0',
             'jumlah_perempuan' => 'nullable|integer|min:0',

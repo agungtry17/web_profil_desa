@@ -19,7 +19,7 @@
         <div>
             <label class="block font-medium mb-1">Kategori</label>
             <select name="kategori" class="w-full border rounded px-3 py-2">
-                @foreach (['usia', 'pekerjaan', 'pendidikan', 'kesehatan'] as $kat)
+                @foreach (['usia', 'pekerjaan', 'pendidikan', 'jumlah_penduduk'] as $kat)
                     <option value="{{ $kat }}" @selected($statistik->kategori == $kat)>{{ ucfirst($kat) }}</option>
                 @endforeach
             </select>

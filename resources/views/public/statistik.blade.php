@@ -192,7 +192,7 @@
         </div>
 
         <div class="bg-white rounded-xl border border-stone-100 shadow-sm p-6">
-            <h2 class="text-lg font-bold text-stone-800 mb-5">Data Kesehatan</h2>
+            <h2 class="text-lg font-bold text-stone-800 mb-5">Data Penduduk</h2>
             @if ($kesehatan->isEmpty())
                 <p class="text-sm text-stone-500">Belum ada data kesehatan untuk tahun ini.</p>
             @else
