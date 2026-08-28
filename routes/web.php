@@ -19,6 +19,7 @@ Route::get('/', [PublicController::class, 'home'])->name('home');
 Route::get('/profil', [PublicController::class, 'profil'])->name('profil');
 Route::get('/statistik', [PublicController::class, 'statistik'])->name('statistik');
 Route::get('/potensi', [PublicController::class, 'potensi'])->name('potensi');
+Route::get('/potensi/{potensi}', [PublicController::class, 'potensiDetail'])->name('potensi.show');
 Route::get('/berita', [PublicController::class, 'berita'])->name('berita');
 Route::get('/berita/{berita:slug}', [PublicController::class, 'beritaDetail'])->name('berita.show');
 Route::get('/layanan', [PublicController::class, 'layanan'])->name('layanan');

@@ -30,7 +30,7 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[220px]">
 
         <!-- Kartu besar -->
-        <div class="md:col-span-2 md:row-span-2 relative rounded-2xl overflow-hidden group">
+        <a href="{{ route('potensi.show', $besar) }}" class="md:col-span-2 md:row-span-2 relative rounded-2xl overflow-hidden group block">
             @if ($besar->foto)
                 <img src="{{ asset('storage/' . $besar->foto) }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
             @else
@@ -44,10 +44,10 @@
                 <h2 class="text-2xl font-bold mb-2">{{ $besar->nama }}</h2>
                 <p class="text-sm text-white/80 max-w-md line-clamp-2">{{ $besar->deskripsi }}</p>
             </div>
-        </div>
+        </a>
 
         @foreach ($sisanya->take(2) as $item)
-        <div class="relative rounded-2xl overflow-hidden group">
+        <a href="{{ route('potensi.show', $item) }}" class="relative rounded-2xl overflow-hidden group block">
             @if ($item->foto)
                 <img src="{{ asset('storage/' . $item->foto) }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
             @else
@@ -60,7 +60,7 @@
                 </span>
                 <h3 class="font-bold">{{ $item->nama }}</h3>
             </div>
-        </div>
+        </a>
         @endforeach
 
         <!-- Kartu statistik UMKM -->
@@ -76,7 +76,7 @@
         </div>
 
         @foreach ($sisanya->skip(2) as $item)
-        <div class="relative rounded-2xl overflow-hidden group">
+        <a href="{{ route('potensi.show', $item) }}" class="relative rounded-2xl overflow-hidden group block">
             @if ($item->foto)
                 <img src="{{ asset('storage/' . $item->foto) }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
             @else
@@ -89,7 +89,7 @@
                 </span>
                 <h3 class="font-bold">{{ $item->nama }}</h3>
             </div>
-        </div>
+        </a>
         @endforeach
 
     </div>

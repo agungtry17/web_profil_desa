@@ -135,6 +135,11 @@ class PublicController extends Controller
         return view('public.potensi', compact('potensis'));
     }
 
+    public function potensiDetail(\App\Models\PotensiDesa $potensi)
+    {
+        return view('public.potensi-detail', compact('potensi'));
+    }
+
     public function berita()
     {
         $beritas = Berita::latest('tanggal_publish')->paginate(9);
