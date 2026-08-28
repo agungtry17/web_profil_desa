@@ -100,6 +100,16 @@
             @endif
             <input type="file" name="logo" class="w-full border rounded px-3 py-2">
         </div>
+
+        <div>
+            <label class="block font-medium mb-1">Foto Banner</label>
+            @if ($profil->foto_banner)
+                <img src="{{ asset('storage/' . $profil->foto_banner) }}" class="w-full h-40 object-cover rounded mb-2">
+            @endif
+            <input type="file" name="foto_banner" accept="image/*" class="w-full border rounded px-3 py-2">
+            <p class="text-xs text-stone-500 mt-1">Disarankan ukuran 1600 x 600 piksel (rasio lebar), format JPG/PNG, maksimal 2MB.</p>
+            @error('foto_banner') <p class="text-red-600 text-sm">{{ $message }}</p> @enderror
+        </div>
         
         <div class="flex gap-2">
             <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Simpan Profil Desa</button>

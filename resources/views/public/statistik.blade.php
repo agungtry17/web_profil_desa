@@ -192,12 +192,12 @@
         </div>
 
         <div class="bg-white rounded-xl border border-stone-100 shadow-sm p-6">
-            <h2 class="text-lg font-bold text-stone-800 mb-5">Data Penduduk</h2>
-            @if ($kesehatan->isEmpty())
-                <p class="text-sm text-stone-500">Belum ada data kesehatan untuk tahun ini.</p>
+            <h2 class="text-lg font-bold text-stone-800 mb-5">Jumlah KK</h2>
+            @if ($jumlahKK->isEmpty())
+                <p class="text-sm text-stone-500">Belum ada data jumlah KK untuk tahun ini.</p>
             @else
                 <div class="grid grid-cols-2 gap-3">
-                    @foreach ($kesehatan as $item)
+                    @foreach ($jumlahKK as $item)
                     <div class="bg-stone-50 rounded-lg p-4 text-center">
                         <p class="text-2xl font-extrabold text-stone-800">{{ number_format($item->jumlah_laki + $item->jumlah_perempuan) }}</p>
                         <p class="text-xs text-stone-500 mt-1">{{ $item->label }}</p>

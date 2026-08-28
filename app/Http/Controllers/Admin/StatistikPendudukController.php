@@ -24,13 +24,17 @@ class StatistikPendudukController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'dusun_id' => 'required|exists:dusuns,id',
-            'kategori' => 'required|in:usia,pekerjaan,pendidikan,jumlah_penduduk',
+            'dusun_id' => 'nullable|required_unless:kategori,pekerjaan|exists:dusuns,id',
+            'kategori' => 'required|in:usia,pekerjaan,pendidikan,jumlah_kk',
             'label' => 'required|string|max:255',
             'jumlah_laki' => 'nullable|integer|min:0',
             'jumlah_perempuan' => 'nullable|integer|min:0',
             'tahun' => 'required|digits:4',
         ]);
+
+        if ($validated['kategori'] === 'pekerjaan') {
+            $validated['dusun_id'] = null;
+        }
 
         StatistikPenduduk::create($validated);
 
@@ -46,13 +50,17 @@ class StatistikPendudukController extends Controller
     public function update(Request $request, StatistikPenduduk $statistik)
     {
         $validated = $request->validate([
-            'dusun_id' => 'required|exists:dusuns,id',
-            'kategori' => 'required|in:usia,pekerjaan,pendidikan,jumlah_penduduk',
+            'dusun_id' => 'nullable|required_unless:kategori,pekerjaan|exists:dusuns,id',
+            'kategori' => 'required|in:usia,pekerjaan,pendidikan,jumlah_kk',
             'label' => 'required|string|max:255',
             'jumlah_laki' => 'nullable|integer|min:0',
             'jumlah_perempuan' => 'nullable|integer|min:0',
             'tahun' => 'required|digits:4',
         ]);
+
+        if ($validated['kategori'] === 'pekerjaan') {
+            $validated['dusun_id'] = null;
+        }
 
         $statistik->update($validated);
 

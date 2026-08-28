@@ -139,19 +139,7 @@
                     };
                 @endphp
                 <div class="bg-white rounded-xl border border-stone-100 shadow-sm overflow-hidden flex flex-col">
-                    <div class="h-56 bg-stone-100">
-                        @if ($p->foto)
-                            <img src="{{ asset('storage/' . $p->foto) }}" class="w-full h-full object-cover">
-                        @else
-                            <div class="w-full h-full flex items-center justify-center text-stone-400 text-sm">
-                                Belum ada foto
-                            </div>
-                        @endif
-                    </div>
                     <div class="p-5 flex flex-col flex-1">
-                        <span class="inline-flex items-center gap-1 self-start bg-[#63B3ED] text-[#2C5282] text-xs font-medium px-3 py-1 rounded-full mb-3">
-                            {{ $kategori }}
-                        </span>
                         <p class="font-bold text-stone-800">{{ $p->nama }}</p>
                         <p class="text-sm text-stone-500 mb-4">{{ $p->jabatan }}</p>
                         @if ($p->no_hp)

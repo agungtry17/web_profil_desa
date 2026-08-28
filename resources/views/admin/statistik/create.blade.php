@@ -10,22 +10,24 @@
     <form action="{{ route('admin.statistik.store') }}" method="POST" class="space-y-4">
         @csrf
 
-        <div>
+        <div id="dusun-wrapper">
             <label class="block font-medium mb-1">Dusun</label>
-            <select name="dusun_id" class="w-full border rounded px-3 py-2">
+            <select name="dusun_id" id="dusun_id" class="w-full border rounded px-3 py-2">
+                <option value="">-- Pilih Dusun --</option>
                 @foreach ($dusuns as $dusun)
                     <option value="{{ $dusun->id }}">{{ $dusun->nama_dusun }}</option>
                 @endforeach
             </select>
+            @error('dusun_id') <p class="text-red-600 text-sm">{{ $message }}</p> @enderror
         </div>
 
         <div>
             <label class="block font-medium mb-1">Kategori</label>
-            <select name="kategori" class="w-full border rounded px-3 py-2">
+            <select name="kategori" id="kategori" class="w-full border rounded px-3 py-2">
                 <option value="usia">Usia</option>
                 <option value="pekerjaan">Pekerjaan</option>
                 <option value="pendidikan">Pendidikan</option>
-                <option value="kesehatan">Jumlah Penduduk</option>
+                <option value="jumlah_kk">Jumlah KK</option>
             </select>
         </div>
 
@@ -59,4 +61,26 @@
     </form>
     @endif
 </div>
+
+@push('scripts')
+<script>
+    const kategoriSelect = document.getElementById('kategori');
+    const dusunWrapper = document.getElementById('dusun-wrapper');
+    const dusunSelect = document.getElementById('dusun_id');
+
+    if (kategoriSelect && dusunWrapper && dusunSelect) {
+        function toggleDusun() {
+            if (kategoriSelect.value === 'pekerjaan') {
+                dusunWrapper.style.display = 'none';
+                dusunSelect.value = '';
+            } else {
+                dusunWrapper.style.display = 'block';
+            }
+        }
+
+        kategoriSelect.addEventListener('change', toggleDusun);
+        toggleDusun();
+    }
+</script>
+@endpush
 @endsection

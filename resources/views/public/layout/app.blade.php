@@ -39,7 +39,6 @@
                                 'statistik' => 'Statistik',
                                 'potensi' => 'Potensi',
                                 'berita' => 'Berita',
-                                'layanan' => 'Layanan',
                                 'galeri' => 'Galeri',
                                 'kontak' => 'Kontak',
                             ];
@@ -100,7 +99,7 @@
                 <h4 class="text-white font-semibold mb-3 text-sm uppercase tracking-wide">Tautan</h4>
                 <ul class="space-y-2 text-sm">
                     <li><a href="{{ route('profil') }}" class="hover:text-white">Profil Desa</a></li>
-                    <li><a href="{{ route('layanan') }}" class="hover:text-white">Layanan Publik</a></li>
+                    <li><a href="{{ route('galeri') }}" class="hover:text-white">Galeri</a></li>
                     <li><a href="{{ route('berita') }}" class="hover:text-white">Berita</a></li>
                     <li><a href="{{ route('kontak') }}" class="hover:text-white">Kontak</a></li>
                 </ul>

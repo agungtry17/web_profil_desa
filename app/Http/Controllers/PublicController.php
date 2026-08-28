@@ -90,7 +90,7 @@ class PublicController extends Controller
             })
             ->values();
 
-        $kesehatan = \App\Models\StatistikPenduduk::where('kategori', 'jumlah_penduduk')
+        $jumlahKK = \App\Models\StatistikPenduduk::where('kategori', 'jumlah_kk')
             ->where('tahun', $tahun)
             ->get()
             ->groupBy('label')
@@ -124,7 +124,7 @@ class PublicController extends Controller
         $tahunTersedia = \App\Models\StatistikPenduduk::select('tahun')->distinct()->orderByDesc('tahun')->pluck('tahun');
 
         return view('public.statistik', compact(
-            'usia', 'pendidikan', 'pekerjaan', 'kesehatan', 'perDusun',
+            'usia', 'pendidikan', 'pekerjaan', 'jumlahKK', 'perDusun',
             'totalLaki', 'totalPerempuan', 'totalPenduduk', 'kepadatan', 'tahun', 'tahunTersedia'
         ));
     }

@@ -23,7 +23,7 @@
         <tbody>
             @forelse ($statistiks as $s)
             <tr class="border-b">
-                <td class="py-2">{{ $s->dusun->nama_dusun }}</td>
+                <td class="py-2">{{ $s->dusun->nama_dusun ?? '- (Semua Dusun)' }}</td>
                 <td class="py-2 capitalize">{{ $s->kategori }}</td>
                 <td class="py-2">{{ $s->label }}</td>
                 <td class="py-2">{{ $s->jumlah_laki }}</td>
