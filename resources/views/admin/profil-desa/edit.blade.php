@@ -92,14 +92,6 @@
                 <input type="text" name="longitude" value="{{ old('longitude', $profil->longitude) }}" placeholder="misal: 110.4167" class="w-full border rounded px-3 py-2">
             </div>
         </div>
-
-        <div>
-            <label class="block font-medium mb-1">Foto Banner</label>
-            @if ($profil->foto_banner)
-                <img src="{{ asset('storage/' . $profil->foto_banner) }}" class="w-48 mb-2 rounded">
-            @endif
-            <input type="file" name="foto_banner" class="w-full border rounded px-3 py-2">
-        </div>
         
         <div>
             <label class="block font-medium mb-1">Logo Desa</label>

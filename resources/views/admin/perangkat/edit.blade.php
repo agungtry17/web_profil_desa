@@ -28,14 +28,6 @@
         </div>
 
         <div>
-            <label class="block font-medium mb-1">Foto</label>
-            @if ($perangkat->foto)
-                <img src="{{ asset('storage/' . $perangkat->foto) }}" class="w-24 mb-2 rounded">
-            @endif
-            <input type="file" name="foto" class="w-full border rounded px-3 py-2">
-        </div>
-
-        <div>
             <label class="block font-medium mb-1">Biografi & Pengalaman</label>
             <textarea name="biografi" rows="4" class="w-full border rounded px-3 py-2">{{ old('biografi', $perangkat->biografi ?? '') }}</textarea>
         </div>

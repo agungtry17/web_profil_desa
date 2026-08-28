@@ -24,7 +24,6 @@ class PerangkatDesaController extends Controller
         $validated = $request->validate([
             'nama' => 'required|string|max:255',
             'jabatan' => 'required|string|max:255',
-            'foto' => 'nullable|image|max:2048',
             'no_hp' => 'nullable|string|max:20',
             'urutan' => 'nullable|integer',
             'biografi' => 'nullable|string',
@@ -33,10 +32,6 @@ class PerangkatDesaController extends Controller
             'tahun_menjabat' => 'nullable|string|max:255',
             'riwayat_karir' => 'nullable|string',
         ]);
-
-        if ($request->hasFile('foto')) {
-            $validated['foto'] = $request->file('foto')->store('perangkat', 'public');
-        }
 
         PerangkatDesa::create($validated);
 

@@ -29,11 +29,6 @@
         </div>
 
         <div>
-            <label class="block font-medium mb-1">Foto</label>
-            <input type="file" name="foto" class="w-full border rounded px-3 py-2">
-        </div>
-
-        <div>
             <label class="block font-medium mb-1">Biografi & Pengalaman</label>
             <textarea name="biografi" rows="4" class="w-full border rounded px-3 py-2">{{ old('biografi', $perangkat->biografi ?? '') }}</textarea>
         </div>
