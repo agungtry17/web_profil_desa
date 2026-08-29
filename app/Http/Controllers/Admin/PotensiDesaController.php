@@ -23,7 +23,7 @@ class PotensiDesaController extends Controller
     {
         $validated = $request->validate([
             'nama' => 'required|string|max:255',
-            'jenis' => 'required|in:ekonomi,umkm,wisata,kerajinan',
+            'jenis' => 'required|in:ekonomi,umkm,wisata,kesenian',
             'deskripsi' => 'nullable|string',
             'foto' => 'nullable|image|max:2048',
             'kontak' => 'nullable|string|max:255',
@@ -48,7 +48,7 @@ class PotensiDesaController extends Controller
     {
         $validated = $request->validate([
             'nama' => 'required|string|max:255',
-            'jenis' => 'required|in:ekonomi,umkm,wisata,kerajinan',
+            'jenis' => 'required|in:ekonomi,umkm,wisata,kesenian',
             'deskripsi' => 'nullable|string',
             'foto' => 'nullable|image|max:2048',
             'kontak' => 'nullable|string|max:255',

@@ -13,7 +13,7 @@
             'ekonomi' => 'Ekonomi',
             'umkm' => 'UMKM',
             'wisata' => 'Wisata Alam',
-            'kerajinan' => 'Kerajinan',
+            'kesenian' => 'Kesenian',
         ];
     @endphp
 

@@ -17,7 +17,7 @@
             'ekonomi' => 'Ekonomi',
             'umkm' => 'UMKM',
             'wisata' => 'Wisata Alam',
-            'kerajinan' => 'Kerajinan',
+            'kesenian' => 'Kesenian',
         ];
         $umkmCount = $potensis->where('jenis', 'umkm')->count();
         $besar = $potensis->first();

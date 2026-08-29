@@ -86,29 +86,46 @@
     </div>
 </div>
 
-<!-- Akses Layanan Cepat -->
+<!-- Berita Terbaru -->
 <div class="bg-stone-50 py-16">
     <div class="max-w-6xl mx-auto px-4">
         <div class="text-center mb-10">
-            <h2 class="text-2xl font-extrabold text-stone-800 mb-2">Akses Layanan Cepat</h2>
-            <p class="text-stone-500 text-sm">Pusat layanan administrasi mandiri untuk warga.</p>
+            <h2 class="text-2xl font-extrabold text-stone-800 mb-2">Berita Terbaru</h2>
+            <p class="text-stone-500 text-sm">Informasi dan kabar terkini seputar desa.</p>
         </div>
 
-        @if ($layanans->isEmpty())
-            <p class="text-center text-stone-500 text-sm">Belum ada layanan yang tersedia.</p>
+        @if ($beritas->isEmpty())
+            <p class="text-center text-stone-500 text-sm">Belum ada berita yang tersedia.</p>
         @else
-            @php
-                $ikonLayanan = ['📄', '📋', '🛠️', '❓'];
-            @endphp
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                @foreach ($layanans as $i => $layanan)
-                <a href="{{ route('layanan') }}" class="bg-white rounded-xl border border-stone-100 shadow-sm p-6 text-center hover:shadow-md transition">
-                    <div class="w-12 h-12 rounded-lg bg-[#1E3A5F] text-white flex items-center justify-center mx-auto mb-3 text-lg">
-                        {{ $ikonLayanan[$i % count($ikonLayanan)] }}
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                @foreach ($beritas->take(3) as $berita)
+                <a href="{{ route('berita.show', $berita) }}" class="bg-white rounded-xl border border-stone-100 shadow-sm overflow-hidden hover:shadow-md transition flex flex-col">
+                    <div class="h-44 bg-stone-100">
+                        @if ($berita->foto)
+                            <img src="{{ asset('storage/' . $berita->foto) }}" class="w-full h-full object-cover">
+                        @else
+                            <div class="w-full h-full bg-[#1E3A5F]"></div>
+                        @endif
                     </div>
-                    <p class="text-sm font-semibold text-stone-800">{{ $layanan->nama_layanan }}</p>
+                    <div class="p-5 flex flex-col flex-1">
+                        @if ($berita->kategori)
+                        <span class="inline-block bg-[#63B3ED] text-[#2C5282] text-xs font-medium px-3 py-1 rounded-full mb-3 self-start">
+                            {{ $berita->kategori }}
+                        </span>
+                        @endif
+                        <h3 class="font-bold text-stone-800 mb-2 line-clamp-2">{{ $berita->judul }}</h3>
+                        <p class="text-xs text-stone-400 mt-auto pt-3">
+                            {{ $berita->tanggal_publish?->translatedFormat('d F Y') }}
+                        </p>
+                    </div>
                 </a>
                 @endforeach
+            </div>
+
+            <div class="text-center mt-10">
+                <a href="{{ route('berita') }}" class="inline-flex items-center gap-2 bg-[#1E3A5F] text-white font-semibold px-5 py-3 rounded-lg hover:opacity-90 transition">
+                    Lihat Semua Berita &rarr;
+                </a>
             </div>
         @endif
     </div>

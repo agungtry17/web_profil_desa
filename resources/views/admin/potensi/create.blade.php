@@ -18,7 +18,7 @@
                 <option value="ekonomi">Ekonomi</option>
                 <option value="umkm">UMKM</option>
                 <option value="wisata">Wisata</option>
-                <option value="kerajinan">Kerajinan</option>
+                <option value="kesenian">Kesenian</option>
             </select>
         </div>
 

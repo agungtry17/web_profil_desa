@@ -15,7 +15,7 @@
         <div>
             <label class="block font-medium mb-1">Jenis</label>
             <select name="jenis" class="w-full border rounded px-3 py-2">
-                @foreach (['ekonomi', 'umkm', 'wisata', 'kerajinan'] as $j)
+                @foreach (['ekonomi', 'umkm', 'wisata', 'kesenian'] as $j)
                     <option value="{{ $j }}" @selected($potensi->jenis == $j)>{{ ucfirst($j) }}</option>
                 @endforeach
             </select>
