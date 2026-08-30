@@ -1,5 +1,5 @@
 @extends('public.layout.app')
-@section('title', 'Beranda')
+@section('title', 'Website Profil Desa Randugunting')
 
 @section('content')
 
